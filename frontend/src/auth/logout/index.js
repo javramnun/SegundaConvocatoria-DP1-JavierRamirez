@@ -19,14 +19,18 @@ const Logout = () => {
     <div className="auth-page-container">
       <div className="auth-form-container">
         <h2 className="text-center text-md">
-          Are you sure you want to log out?
+          ¿Estás seguro de que deseas cerrar sesión?
         </h2>
         <div className="options-row">
-          <Link className="auth-button" to="/" style={{textDecoration: "none"}}>
+          <Link to="/" style={{borderRadius: 8, padding: 10, textDecoration: 'none',
+                        fontSize: 22, color: 'lightgray', width: 200, textAlign: 'center',
+                        backgroundColor: '#2f324f', marginTop: 20}}>
             No
           </Link>
-          <button className="auth-button" onClick={() => sendLogoutRequest()}>
-            Yes
+          <button onClick={() => sendLogoutRequest()} style={{borderRadius: 8, padding: 10, textDecoration: 'none',
+                        fontSize: 22, color: 'lightgray', width: 200, textAlign: 'center',
+                        backgroundColor: '#2f324f', marginTop: 20}}>
+            Sí
           </button>
         </div>
       </div>

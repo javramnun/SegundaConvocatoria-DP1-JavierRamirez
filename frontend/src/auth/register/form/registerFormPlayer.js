@@ -1,6 +1,6 @@
 import { formValidators } from "../../../validators/formValidators";
 
-export const loginFormInputs = [
+export const registerFormPlayer = [
   {
     tag: "Nombre de Usuario",
     name: "username",
@@ -16,5 +16,5 @@ export const loginFormInputs = [
     defaultValue: "",
     isRequired: true,
     validators: [formValidators.notEmptyValidator],
-  },
+  }
 ];

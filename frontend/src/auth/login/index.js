@@ -21,12 +21,12 @@ export default function Login() {
     })
       .then(function (response) {
         if (response.status === 200) return response.json();
-        else return Promise.reject("Invalid login attempt");
+        else return Promise.reject("Usuario o contraseña incorrectos.");
       })
       .then(function (data) {
         tokenService.setUser(data);
         tokenService.updateLocalAccessToken(data.token);
-        window.location.href = "/dashboard";
+        window.location.href = "/";
       })
       .catch((error) => {         
         setMessage(error);
@@ -36,22 +36,23 @@ export default function Login() {
   
     return (
       <div className="auth-page-container">
+
+        <h1 style={{marginTop: 125, marginBottom: message ? 10: 40}}>Login</h1>
+
         {message ? (
-          <Alert color="primary">{message}</Alert>
+          <Alert color="primary" style={{marginBottom: 20}}>{message}</Alert>
         ) : (
           <></>
         )}
 
-        <h1>Login</h1>
-
-        <div className="auth-form-container">
+        <div className="auth-form-container2">
           <FormGenerator
             ref={loginFormRef}
             inputs={loginFormInputs}
             onSubmit={handleSubmit}
             numberOfColumns={1}
             listenEnterKey
-            buttonText="Login"
+            buttonText="Iniciar Sesión"
             buttonClassName="auth-button"
           />
         </div>
