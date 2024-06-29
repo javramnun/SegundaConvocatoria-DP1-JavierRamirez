@@ -73,3 +73,10 @@
     margin: 10px 0;
   }
 }
+
+.custom-form-input-label {
+  left: 5px;
+  margin-top: 2px;
+  color: #cca72e;
+  cursor: pointer;
+}

@@ -81,16 +81,16 @@ class UserEdit extends Component {
                 {title}
                 <Form onSubmit={this.handleSubmit}>
                     <FormGroup>
-                        <Label for="username">Username</Label>
+                        <Label for="username">Nombre de Usuario</Label>
                         <Input type="text" name="username" id="username" value={user.username || ''}
                             onChange={this.handleChange} autoComplete="username" />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="lastName">Password</Label>
+                        <Label for="lastName">Contraseña</Label>
                         <Input type="password" name="password" id="password" value={user.password || ''}
                             onChange={this.handleChange} autoComplete="password" />
                     </FormGroup>
-                    <Label for="authority">Authority</Label>
+                    <Label for="authority">Rol</Label>
                     {user.id ?
                         <p>{user.authority.authority || ''}</p> :
                         <Input type="select" name="authority" id="authority" value={user.authority.id || 1}
@@ -98,8 +98,8 @@ class UserEdit extends Component {
                             {authOptions}
                         </Input>}
                     <FormGroup>
-                        <Button color="primary" type="submit">Save</Button>{' '}
-                        <Button color="secondary" tag={Link} to="/users">Cancel</Button>
+                        <Button color="primary" type="submit">Guardar</Button>{' '}
+                        <Button color="secondary" tag={Link} to="/users">Cancelar</Button>
                     </FormGroup>
                 </Form>
             </Container>

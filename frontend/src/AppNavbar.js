@@ -29,10 +29,10 @@ function AppNavbar() {
             adminLinks = (
                 <>
                     <NavItem>
-                        <NavLink style={{ color: "white", marginRight: 10, marginLeft: 10 }} tag={Link} to="/owners">Crear Partida</NavLink>
+                        <NavLink style={{ color: "white", marginRight: 10, marginLeft: 10 }} tag={Link} to="/createGame">Crear Partida</NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink style={{ color: "white", marginRight: 10 }} tag={Link} to="/pets">Unirse a Partida</NavLink>
+                        <NavLink style={{ color: "white", marginRight: 10 }} tag={Link} to="/joinGame">Unirse a Partida</NavLink>
                     </NavItem>
                     <NavItem>
                         <NavLink style={{ color: "white", marginRight: 10 }} tag={Link} to="/users">Gestionar Usuarios</NavLink>
@@ -44,10 +44,10 @@ function AppNavbar() {
             ownerLinks = (
                 <>
                     <NavItem>
-                        <NavLink style={{ color: "white", marginRight: 10, marginLeft: 10 }} tag={Link} to="/owners">Crear Partida</NavLink>
+                        <NavLink style={{ color: "white", marginRight: 10, marginLeft: 10 }} tag={Link} to="/createGame">Crear Partida</NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink style={{ color: "white", marginRight: 10 }} tag={Link} to="/pets">Unirse a Partida</NavLink>
+                        <NavLink style={{ color: "white", marginRight: 10 }} tag={Link} to="/joinGame">Unirse a Partida</NavLink>
                     </NavItem>
                 </>
             )

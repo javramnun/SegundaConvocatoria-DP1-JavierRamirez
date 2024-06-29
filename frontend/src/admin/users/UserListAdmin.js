@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button, ButtonGroup, Table } from "reactstrap";
 import tokenService from "../../services/token.service";
-import "../../static/css/admin/adminPage.css";
+import "../../static/css/auth/authPage.css";
 import deleteFromList from "../../util/deleteFromList";
 import getErrorModal from "../../util/getErrorModal";
 import useFetchState from "../../util/useFetchState";
@@ -23,10 +23,10 @@ export default function UserListAdmin() {
 
   const userList = users.map((user) => {
     return (
-      <tr key={user.id}>
-        <td>{user.username}</td>
-        <td>{user.authority.authority}</td>
-        <td>
+      <tr key={user.id} style={{ textAlign: "center", border: "2px solid black", backgroundColor: "rgba(255,255,255,0.3)"}}>
+        <td className="p-2">{user.username}</td>
+        <td className="p-2">{user.authority.authority}</td>
+        <td className="p-2">
           <ButtonGroup>
             <Button
               size="sm"
@@ -35,7 +35,7 @@ export default function UserListAdmin() {
               tag={Link}
               to={"/users/" + user.id}
             >
-              Edit
+              Editar
             </Button>
             <Button
               size="sm"
@@ -52,7 +52,7 @@ export default function UserListAdmin() {
                 )
               }
             >
-              Delete
+              Borrar
             </Button>
           </ButtonGroup>
         </td>
@@ -62,24 +62,24 @@ export default function UserListAdmin() {
   const modal = getErrorModal(setVisible, visible, message);
 
   return (
-    <div className="admin-page-container">
-      <h1 className="text-center">Users</h1>
+    <div className="auth-page-container">
+      <h1 className="text-center" style={{ marginTop: 125, marginBottom: 30 }}>Usuarios</h1>
       {alerts.map((a) => a.alert)}
       {modal}
-      <Button color="success" tag={Link} to="/users/new">
-        Add User
-      </Button>
-      <div>
-        <Table aria-label="users" className="mt-4">
+      <div className="auth-form-container2">
+        <Button className="auth-button" tag={Link} to="/users/new">
+          Añadir Usuario
+        </Button>
+        <table className="mt-4" style={{color: "#1f324f"}}>
           <thead>
-            <tr>
-              <th>Username</th>
-              <th>Authority</th>
-              <th>Actions</th>
+            <tr style={{ textTransform: "uppercase", textAlign: "center", border: "2px solid black", backgroundColor: "rgba(255,255,255,0.9)" }}>    
+              <th className="p-2">Usuario</th>
+              <th className="p-2">Rol</th>
+              <th className="p-2">Acciones</th>
             </tr>
           </thead>
-          <tbody>{userList}</tbody>
-        </Table>
+          <tbody className="p-2">{userList}</tbody>
+        </table>
       </div>
     </div>
   );

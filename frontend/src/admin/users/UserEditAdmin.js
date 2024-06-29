@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { Form, Input, Label } from "reactstrap";
 import tokenService from "../../services/token.service";
-import "../../static/css/admin/adminPage.css";
+import "../../static/css/auth/authPage.css";
 import getErrorModal from "../../util/getErrorModal";
 import getIdFromUrl from "../../util/getIdFromUrl";
 import useFetchData from "../../util/useFetchData";
@@ -71,13 +70,13 @@ export default function UserEditAdmin() {
 
   return (
     <div className="auth-page-container">
-      {<h2>{user.id ? "Edit User" : "Add User"}</h2>}
+      {<h1 style={{marginTop:125, marginBottom:30}}>{user.id ? "Editar Usuario" : "Añadir Usuario"}</h1>}
       {modal}
-      <div className="auth-form-container">
+      <div className="auth-form-container2">
         <Form onSubmit={handleSubmit}>
           <div className="custom-form-input">
             <Label for="username" className="custom-form-input-label">
-              Username
+              Nombre de Usuario
             </Label>
             <Input
               type="text"
@@ -91,7 +90,7 @@ export default function UserEditAdmin() {
           </div>
           <div className="custom-form-input">
             <Label for="lastName" className="custom-form-input-label">
-              Password
+              Contraseña
             </Label>
             <Input
               type="password"
@@ -104,7 +103,7 @@ export default function UserEditAdmin() {
             />
           </div>
           <Label for="authority" className="custom-form-input-label">
-            Authority
+            Rol
           </Label>
           <div className="custom-form-input">
             {user.id ? (
@@ -135,15 +134,15 @@ export default function UserEditAdmin() {
               </Input>
             )}
           </div>
-          <div className="custom-button-row">
-            <button className="auth-button">Save</button>
-            <Link
-              to={`/users`}
+          <div className="custom-button-row mt-2" style={{ justifyContent: "space-between" }}>
+            <button className="auth-button">Guardar</button>
+            <button
+              onClick={() => { window.location.href = '/users'; }}
               className="auth-button"
               style={{ textDecoration: "none" }}
             >
-              Cancel
-            </Link>
+              Cancelar
+            </button>
           </div>
         </Form>
       </div>

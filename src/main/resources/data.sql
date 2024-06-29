@@ -44,11 +44,11 @@ INSERT INTO cards(id, name, design) VALUES (30, 'Pintor', '../../../../frontend/
 
 
 INSERT INTO themes(id, name) VALUES (1, 'Mary Poppins');
-INSERT INTO themes(id, name) VALUES (1, 'San Valentin');
-INSERT INTO themes(id, name) VALUES (1, 'Charlie y la fabrica de chocolate');
-INSERT INTO themes(id, name) VALUES (1, 'Los Reyes Magos');
-INSERT INTO themes(id, name) VALUES (1, 'Pesadillas antes de Navidad');
-INSERT INTO themes(id, name) VALUES (1, 'Raft');
+INSERT INTO themes(id, name) VALUES (2, 'San Valentin');
+INSERT INTO themes(id, name) VALUES (3, 'Charlie y la fabrica de chocolate');
+INSERT INTO themes(id, name) VALUES (4, 'Los Reyes Magos');
+INSERT INTO themes(id, name) VALUES (5, 'Pesadillas antes de Navidad');
+INSERT INTO themes(id, name) VALUES (6, 'Raft');
 
 
 --INSERT INTO tokens(id, color)
